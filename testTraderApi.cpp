@@ -1,6 +1,6 @@
 // testTraderApi.cpp : 定义控制台应用程序的入口点。
 //
-#include ".\ThostTraderApi\ThostFtdcTraderApi.h"
+#include "ThostFtdcTraderApi.h"
 #include "TraderSpi.h"
 
 // UserApi对象
@@ -18,17 +18,18 @@ TThostFtdcPriceType	LIMIT_PRICE = 38850;				// 价格
 // 请求编号
 int iRequestID = 0;
 
-void main(void)
+int main(void)
 {
 	// 初始化UserApi
 	pUserApi = CThostFtdcTraderApi::CreateFtdcTraderApi();			// 创建UserApi
 	CTraderSpi* pUserSpi = new CTraderSpi();
 	pUserApi->RegisterSpi((CThostFtdcTraderSpi*)pUserSpi);			// 注册事件类
-	pUserApi->SubscribePublicTopic(TERT_RESTART);					// 注册公有流
-	pUserApi->SubscribePrivateTopic(TERT_RESTART);					// 注册私有流
+	pUserApi->SubscribePublicTopic(THOST_TERT_RESTART);					// 注册公有流
+	pUserApi->SubscribePrivateTopic(THOST_TERT_RESTART);					// 注册私有流
 	pUserApi->RegisterFront(FRONT_ADDR);							// connect
 	pUserApi->Init();
 
 	pUserApi->Join();
 //	pUserApi->Release();
+	return 0;
 }

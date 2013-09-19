@@ -1,0 +1,11 @@
+testTraderApi.o: testTraderApi.cpp include/ThostFtdcTraderApi.h \
+ include/ThostFtdcUserApiStruct.h include/ThostFtdcUserApiDataType.h \
+ TraderSpi.h
+
+include/ThostFtdcTraderApi.h:
+
+include/ThostFtdcUserApiStruct.h:
+
+include/ThostFtdcUserApiDataType.h:
+
+TraderSpi.h:

@@ -1,7 +1,10 @@
 #include <iostream>
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 using namespace std;
 
-#include ".\ThostTraderApi\ThostFtdcTraderApi.h"
+#include "ThostFtdcTraderApi.h"
 #include "TraderSpi.h"
 
 #pragma warning(disable : 4996)
