@@ -4,6 +4,12 @@
 /* Define to 1 if you have the <inttypes.h> header file. */
 #define HAVE_INTTYPES_H 1
 
+/* Define to 1 if you have the `pq' library (-lpq). */
+#define HAVE_LIBPQ 1
+
+/* Define to 1 if you have the `pqxx' library (-lpqxx). */
+#define HAVE_LIBPQXX 1
+
 /* Define to 1 if you have the <memory.h> header file. */
 #define HAVE_MEMORY_H 1
 
@@ -32,7 +38,7 @@
 #define HAVE_UNISTD_H 1
 
 /* Define to 1 if the system has the type `_Bool'. */
-#define HAVE__BOOL 1
+/* #undef HAVE__BOOL */
 
 /* Name of package */
 #define PACKAGE "ACTS"

@@ -781,22 +781,33 @@ m4trace:configure.in:12: -1- m4_pattern_allow([^am__fastdepCC_TRUE$])
 m4trace:configure.in:12: -1- m4_pattern_allow([^am__fastdepCC_FALSE$])
 m4trace:configure.in:12: -1- _AM_SUBST_NOTMAKE([am__fastdepCC_TRUE])
 m4trace:configure.in:12: -1- _AM_SUBST_NOTMAKE([am__fastdepCC_FALSE])
-m4trace:configure.in:19: -1- m4_pattern_allow([^CPP$])
-m4trace:configure.in:19: -1- m4_pattern_allow([^CPPFLAGS$])
-m4trace:configure.in:19: -1- m4_pattern_allow([^CPP$])
-m4trace:configure.in:19: -1- m4_pattern_allow([^GREP$])
-m4trace:configure.in:19: -1- m4_pattern_allow([^EGREP$])
-m4trace:configure.in:19: -1- m4_pattern_allow([^STDC_HEADERS$])
-m4trace:configure.in:19: -1- m4_pattern_allow([^HAVE__BOOL$])
-m4trace:configure.in:22: -1- m4_pattern_allow([^HAVE_MEMSET$])
-m4trace:configure.in:24: -1- _m4_warn([obsolete], [AC_OUTPUT should be used without arguments.
+m4trace:configure.in:15: -1- _m4_warn([obsolete], [The macro `AC_LANG_CPLUSPLUS' is obsolete.
+You should run autoupdate.], [../../lib/autoconf/c.m4:252: AC_LANG_CPLUSPLUS is expanded from...
+configure.in:15: the top level])
+m4trace:configure.in:16: -2- _m4_warn([obsolete], [The macro `AC_ERROR' is obsolete.
+You should run autoupdate.], [../../lib/autoconf/oldnames.m4:34: AC_ERROR is expanded from...
+configure.in:16: the top level])
+m4trace:configure.in:16: -1- m4_pattern_allow([^HAVE_LIBPQ$])
+m4trace:configure.in:17: -2- _m4_warn([obsolete], [The macro `AC_ERROR' is obsolete.
+You should run autoupdate.], [../../lib/autoconf/oldnames.m4:34: AC_ERROR is expanded from...
+configure.in:17: the top level])
+m4trace:configure.in:17: -1- m4_pattern_allow([^HAVE_LIBPQXX$])
+m4trace:configure.in:22: -1- m4_pattern_allow([^CXXCPP$])
+m4trace:configure.in:22: -1- m4_pattern_allow([^CPPFLAGS$])
+m4trace:configure.in:22: -1- m4_pattern_allow([^CXXCPP$])
+m4trace:configure.in:22: -1- m4_pattern_allow([^GREP$])
+m4trace:configure.in:22: -1- m4_pattern_allow([^EGREP$])
+m4trace:configure.in:22: -1- m4_pattern_allow([^STDC_HEADERS$])
+m4trace:configure.in:22: -1- m4_pattern_allow([^HAVE__BOOL$])
+m4trace:configure.in:25: -1- m4_pattern_allow([^HAVE_MEMSET$])
+m4trace:configure.in:27: -1- _m4_warn([obsolete], [AC_OUTPUT should be used without arguments.
 You should run autoupdate.], [])
-m4trace:configure.in:24: -1- m4_pattern_allow([^LIB@&t@OBJS$])
-m4trace:configure.in:24: -1- m4_pattern_allow([^LTLIBOBJS$])
-m4trace:configure.in:24: -1- AM_CONDITIONAL([am__EXEEXT], [test -n "$EXEEXT"])
-m4trace:configure.in:24: -1- m4_pattern_allow([^am__EXEEXT_TRUE$])
-m4trace:configure.in:24: -1- m4_pattern_allow([^am__EXEEXT_FALSE$])
-m4trace:configure.in:24: -1- _AM_SUBST_NOTMAKE([am__EXEEXT_TRUE])
-m4trace:configure.in:24: -1- _AM_SUBST_NOTMAKE([am__EXEEXT_FALSE])
-m4trace:configure.in:24: -1- _AC_AM_CONFIG_HEADER_HOOK(["$ac_file"])
-m4trace:configure.in:24: -1- _AM_OUTPUT_DEPENDENCY_COMMANDS
+m4trace:configure.in:27: -1- m4_pattern_allow([^LIB@&t@OBJS$])
+m4trace:configure.in:27: -1- m4_pattern_allow([^LTLIBOBJS$])
+m4trace:configure.in:27: -1- AM_CONDITIONAL([am__EXEEXT], [test -n "$EXEEXT"])
+m4trace:configure.in:27: -1- m4_pattern_allow([^am__EXEEXT_TRUE$])
+m4trace:configure.in:27: -1- m4_pattern_allow([^am__EXEEXT_FALSE$])
+m4trace:configure.in:27: -1- _AM_SUBST_NOTMAKE([am__EXEEXT_TRUE])
+m4trace:configure.in:27: -1- _AM_SUBST_NOTMAKE([am__EXEEXT_FALSE])
+m4trace:configure.in:27: -1- _AC_AM_CONFIG_HEADER_HOOK(["$ac_file"])
+m4trace:configure.in:27: -1- _AM_OUTPUT_DEPENDENCY_COMMANDS

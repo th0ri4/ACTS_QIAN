@@ -12,6 +12,9 @@ AC_PROG_CXX
 AC_PROG_CC
 
 # Checks for libraries.
+AC_LANG_CPLUSPLUS
+AC_CHECK_LIB([pq], [main], [], AC_ERROR([libpq is required]))
+AC_CHECK_LIB([pqxx], [main], [], AC_ERROR([libpqxx is required]))
 
 # Checks for header files.
 
