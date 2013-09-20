@@ -11,10 +11,6 @@ CThostFtdcTraderApi* pUserApi;
 
 CPgsqlConfig g_PgsqlConfig;
 
-char  FRONT_ADDR[] = "tcp://asp-sim2-front1.financial-trading-platform.com:26205";		// 前置地址
-TThostFtdcBrokerIDType	BROKER_ID = "2030";			// 经纪公司代码
-TThostFtdcInvestorIDType INVESTOR_ID = "00069";			// 投资者代码
-TThostFtdcPasswordType  PASSWORD = "888888";			// 用户密码
 TThostFtdcInstrumentIDType INSTRUMENT_ID = "cu0909";		// 合约代码
 TThostFtdcDirectionType	DIRECTION = THOST_FTDC_D_Sell;		// 买卖方向
 TThostFtdcPriceType	LIMIT_PRICE = 38850;			// 价格
@@ -35,6 +31,6 @@ int main(void)
 	pUserApi->Init();
 
 	pUserApi->Join();
-	//pUserApi->Release();
+	pUserApi->Release();
 	return 0;
 }

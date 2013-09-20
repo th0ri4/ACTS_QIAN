@@ -43,7 +43,7 @@ void CTraderSpi::ReqUserLogin()
 	CThostFtdcReqUserLoginField req;
 	memset(&req, 0, sizeof(req));
 	strcpy(req.BrokerID, g_PgsqlConfig.GetBrokerId().c_str());
-	strcpy(req.UserID, INVESTOR_ID);
+	strcpy(req.UserID, g_PgsqlConfig.GetUserId().c_str());
 	strcpy(req.Password, g_PgsqlConfig.GetPassword().c_str());
 	int iResult = pUserApi->ReqUserLogin(&req, ++iRequestID);
 	cerr << "--->>> 发送用户登录请求: " << ((iResult == 0) ? "成功" : "失败") << endl;
