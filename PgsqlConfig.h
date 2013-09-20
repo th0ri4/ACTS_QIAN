@@ -6,7 +6,7 @@
 #endif // _MSC_VER > 1000
 
 #include <string> 
-#include <pqxx\pqxx>
+#include <pqxx/pqxx>
 
 using namespace std;
 using namespace pqxx;

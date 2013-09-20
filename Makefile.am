@@ -1,5 +1,5 @@
 AUTOMAKE_OPTIONS=foreign
-INCLUDES=-I./include
+INCLUDES=-I./include -I/usr/include/
 bin_PROGRAMS=acts
-acts_SOURCES=testTraderApi.cpp TraderSpi.cpp TraderSpi.h
-acts_LDFLAGS=./lib/thosttraderapi.so
+acts_SOURCES=testTraderApi.cpp TraderSpi.cpp TraderSpi.h PgsqlConfig.cpp PgsqlConfig.h
+acts_LDFLAGS=./lib/thosttraderapi.so -lpqxx -lpq

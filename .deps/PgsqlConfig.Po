@@ -1,6 +1,4 @@
-testTraderApi.o: testTraderApi.cpp include/ThostFtdcTraderApi.h \
- include/ThostFtdcUserApiStruct.h include/ThostFtdcUserApiDataType.h \
- TraderSpi.h PgsqlConfig.h /usr/include/c++/4.7/string \
+PgsqlConfig.o: PgsqlConfig.cpp PgsqlConfig.h /usr/include/c++/4.7/string \
  /usr/include/c++/4.7/x86_64-linux-gnu/bits/c++config.h \
  /usr/include/c++/4.7/x86_64-linux-gnu/bits/os_defines.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/bits/predefs.h \
@@ -128,14 +126,6 @@ testTraderApi.o: testTraderApi.cpp include/ThostFtdcTraderApi.h \
  /usr/include/pqxx/transaction.hxx /usr/include/pqxx/transactor \
  /usr/include/pqxx/transactor.hxx /usr/include/pqxx/version \
  /usr/include/pqxx/version.hxx
-
-include/ThostFtdcTraderApi.h:
-
-include/ThostFtdcUserApiStruct.h:
-
-include/ThostFtdcUserApiDataType.h:
-
-TraderSpi.h:
 
 PgsqlConfig.h:
 

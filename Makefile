@@ -66,7 +66,8 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_acts_OBJECTS = testTraderApi.$(OBJEXT) TraderSpi.$(OBJEXT)
+am_acts_OBJECTS = testTraderApi.$(OBJEXT) TraderSpi.$(OBJEXT) \
+	PgsqlConfig.$(OBJEXT)
 acts_OBJECTS = $(am_acts_OBJECTS)
 acts_LDADD = $(LDADD)
 acts_LINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(acts_LDFLAGS) \
@@ -199,9 +200,9 @@ top_build_prefix =
 top_builddir = .
 top_srcdir = .
 AUTOMAKE_OPTIONS = foreign
-INCLUDES = -I./include
-acts_SOURCES = testTraderApi.cpp TraderSpi.cpp TraderSpi.h
-acts_LDFLAGS = ./lib/thosttraderapi.so
+INCLUDES = -I./include -I/usr/include/
+acts_SOURCES = testTraderApi.cpp TraderSpi.cpp TraderSpi.h PgsqlConfig.cpp PgsqlConfig.h
+acts_LDFLAGS = ./lib/thosttraderapi.so -lpqxx -lpq
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 
@@ -306,6 +307,7 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+include ./$(DEPDIR)/PgsqlConfig.Po
 include ./$(DEPDIR)/TraderSpi.Po
 include ./$(DEPDIR)/testTraderApi.Po
 

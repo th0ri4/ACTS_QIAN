@@ -81,7 +81,60 @@ TraderSpi.o: TraderSpi.cpp /usr/include/c++/4.7/iostream \
  /usr/include/x86_64-linux-gnu/bits/sigset.h \
  /usr/include/x86_64-linux-gnu/sys/sysmacros.h /usr/include/alloca.h \
  include/ThostFtdcTraderApi.h include/ThostFtdcUserApiStruct.h \
- include/ThostFtdcUserApiDataType.h TraderSpi.h
+ include/ThostFtdcUserApiDataType.h TraderSpi.h PgsqlConfig.h \
+ /usr/include/pqxx/pqxx /usr/include/pqxx/binarystring \
+ /usr/include/pqxx/binarystring.hxx /usr/include/pqxx/compiler-public.hxx \
+ /usr/include/pqxx/config-public-compiler.h /usr/include/c++/4.7/iterator \
+ /usr/include/c++/4.7/bits/stream_iterator.h \
+ /usr/include/pqxx/compiler-internal-pre.hxx /usr/include/pqxx/result \
+ /usr/include/pqxx/result.hxx /usr/include/c++/4.7/stdexcept \
+ /usr/include/pqxx/except /usr/include/pqxx/except.hxx \
+ /usr/include/pqxx/util /usr/include/pqxx/util.hxx \
+ /usr/include/c++/4.7/cstdio /usr/include/c++/4.7/typeinfo \
+ /usr/include/c++/4.7/vector /usr/include/c++/4.7/bits/stl_construct.h \
+ /usr/include/c++/4.7/ext/alloc_traits.h \
+ /usr/include/c++/4.7/bits/stl_uninitialized.h \
+ /usr/include/c++/4.7/bits/stl_vector.h \
+ /usr/include/c++/4.7/bits/stl_bvector.h \
+ /usr/include/c++/4.7/bits/vector.tcc /usr/include/c++/4.7/tr1/memory \
+ /usr/include/c++/4.7/memory /usr/include/c++/4.7/bits/stl_tempbuf.h \
+ /usr/include/c++/4.7/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/4.7/backward/auto_ptr.h \
+ /usr/include/c++/4.7/ext/concurrence.h \
+ /usr/include/c++/4.7/tr1/type_traits \
+ /usr/include/c++/4.7/tr1/shared_ptr.h \
+ /usr/include/pqxx/libpq-forward.hxx \
+ /usr/include/pqxx/compiler-internal-post.hxx /usr/include/pqxx/strconv \
+ /usr/include/pqxx/strconv.hxx /usr/include/c++/4.7/sstream \
+ /usr/include/c++/4.7/bits/sstream.tcc /usr/include/pqxx/connection \
+ /usr/include/pqxx/connection.hxx /usr/include/pqxx/connectionpolicy \
+ /usr/include/pqxx/connectionpolicy.hxx \
+ /usr/include/pqxx/basic_connection \
+ /usr/include/pqxx/basic_connection.hxx /usr/include/pqxx/connection_base \
+ /usr/include/pqxx/connection_base.hxx /usr/include/c++/4.7/bitset \
+ /usr/include/c++/4.7/map /usr/include/c++/4.7/bits/stl_tree.h \
+ /usr/include/c++/4.7/bits/stl_map.h \
+ /usr/include/c++/4.7/bits/stl_multimap.h \
+ /usr/include/pqxx/prepared_statement \
+ /usr/include/pqxx/prepared_statement.hxx \
+ /usr/include/pqxx/internal/statement_parameters.hxx \
+ /usr/include/pqxx/cursor /usr/include/pqxx/cursor.hxx \
+ /usr/include/c++/4.7/limits /usr/include/pqxx/transaction_base \
+ /usr/include/pqxx/transaction_base.hxx /usr/include/pqxx/isolation \
+ /usr/include/pqxx/isolation.hxx /usr/include/pqxx/largeobject \
+ /usr/include/pqxx/largeobject.hxx /usr/include/pqxx/dbtransaction \
+ /usr/include/pqxx/dbtransaction.hxx /usr/include/pqxx/nontransaction \
+ /usr/include/pqxx/nontransaction.hxx /usr/include/pqxx/notify-listen \
+ /usr/include/pqxx/notify-listen.hxx /usr/include/pqxx/pipeline \
+ /usr/include/pqxx/pipeline.hxx /usr/include/pqxx/robusttransaction \
+ /usr/include/pqxx/robusttransaction.hxx /usr/include/pqxx/subtransaction \
+ /usr/include/pqxx/subtransaction.hxx /usr/include/pqxx/tablereader \
+ /usr/include/pqxx/tablereader.hxx /usr/include/pqxx/tablestream \
+ /usr/include/pqxx/tablestream.hxx /usr/include/pqxx/tablewriter \
+ /usr/include/pqxx/tablewriter.hxx /usr/include/pqxx/transaction \
+ /usr/include/pqxx/transaction.hxx /usr/include/pqxx/transactor \
+ /usr/include/pqxx/transactor.hxx /usr/include/pqxx/version \
+ /usr/include/pqxx/version.hxx
 
 /usr/include/c++/4.7/iostream:
 
@@ -300,3 +353,179 @@ include/ThostFtdcUserApiStruct.h:
 include/ThostFtdcUserApiDataType.h:
 
 TraderSpi.h:
+
+PgsqlConfig.h:
+
+/usr/include/pqxx/pqxx:
+
+/usr/include/pqxx/binarystring:
+
+/usr/include/pqxx/binarystring.hxx:
+
+/usr/include/pqxx/compiler-public.hxx:
+
+/usr/include/pqxx/config-public-compiler.h:
+
+/usr/include/c++/4.7/iterator:
+
+/usr/include/c++/4.7/bits/stream_iterator.h:
+
+/usr/include/pqxx/compiler-internal-pre.hxx:
+
+/usr/include/pqxx/result:
+
+/usr/include/pqxx/result.hxx:
+
+/usr/include/c++/4.7/stdexcept:
+
+/usr/include/pqxx/except:
+
+/usr/include/pqxx/except.hxx:
+
+/usr/include/pqxx/util:
+
+/usr/include/pqxx/util.hxx:
+
+/usr/include/c++/4.7/cstdio:
+
+/usr/include/c++/4.7/typeinfo:
+
+/usr/include/c++/4.7/vector:
+
+/usr/include/c++/4.7/bits/stl_construct.h:
+
+/usr/include/c++/4.7/ext/alloc_traits.h:
+
+/usr/include/c++/4.7/bits/stl_uninitialized.h:
+
+/usr/include/c++/4.7/bits/stl_vector.h:
+
+/usr/include/c++/4.7/bits/stl_bvector.h:
+
+/usr/include/c++/4.7/bits/vector.tcc:
+
+/usr/include/c++/4.7/tr1/memory:
+
+/usr/include/c++/4.7/memory:
+
+/usr/include/c++/4.7/bits/stl_tempbuf.h:
+
+/usr/include/c++/4.7/bits/stl_raw_storage_iter.h:
+
+/usr/include/c++/4.7/backward/auto_ptr.h:
+
+/usr/include/c++/4.7/ext/concurrence.h:
+
+/usr/include/c++/4.7/tr1/type_traits:
+
+/usr/include/c++/4.7/tr1/shared_ptr.h:
+
+/usr/include/pqxx/libpq-forward.hxx:
+
+/usr/include/pqxx/compiler-internal-post.hxx:
+
+/usr/include/pqxx/strconv:
+
+/usr/include/pqxx/strconv.hxx:
+
+/usr/include/c++/4.7/sstream:
+
+/usr/include/c++/4.7/bits/sstream.tcc:
+
+/usr/include/pqxx/connection:
+
+/usr/include/pqxx/connection.hxx:
+
+/usr/include/pqxx/connectionpolicy:
+
+/usr/include/pqxx/connectionpolicy.hxx:
+
+/usr/include/pqxx/basic_connection:
+
+/usr/include/pqxx/basic_connection.hxx:
+
+/usr/include/pqxx/connection_base:
+
+/usr/include/pqxx/connection_base.hxx:
+
+/usr/include/c++/4.7/bitset:
+
+/usr/include/c++/4.7/map:
+
+/usr/include/c++/4.7/bits/stl_tree.h:
+
+/usr/include/c++/4.7/bits/stl_map.h:
+
+/usr/include/c++/4.7/bits/stl_multimap.h:
+
+/usr/include/pqxx/prepared_statement:
+
+/usr/include/pqxx/prepared_statement.hxx:
+
+/usr/include/pqxx/internal/statement_parameters.hxx:
+
+/usr/include/pqxx/cursor:
+
+/usr/include/pqxx/cursor.hxx:
+
+/usr/include/c++/4.7/limits:
+
+/usr/include/pqxx/transaction_base:
+
+/usr/include/pqxx/transaction_base.hxx:
+
+/usr/include/pqxx/isolation:
+
+/usr/include/pqxx/isolation.hxx:
+
+/usr/include/pqxx/largeobject:
+
+/usr/include/pqxx/largeobject.hxx:
+
+/usr/include/pqxx/dbtransaction:
+
+/usr/include/pqxx/dbtransaction.hxx:
+
+/usr/include/pqxx/nontransaction:
+
+/usr/include/pqxx/nontransaction.hxx:
+
+/usr/include/pqxx/notify-listen:
+
+/usr/include/pqxx/notify-listen.hxx:
+
+/usr/include/pqxx/pipeline:
+
+/usr/include/pqxx/pipeline.hxx:
+
+/usr/include/pqxx/robusttransaction:
+
+/usr/include/pqxx/robusttransaction.hxx:
+
+/usr/include/pqxx/subtransaction:
+
+/usr/include/pqxx/subtransaction.hxx:
+
+/usr/include/pqxx/tablereader:
+
+/usr/include/pqxx/tablereader.hxx:
+
+/usr/include/pqxx/tablestream:
+
+/usr/include/pqxx/tablestream.hxx:
+
+/usr/include/pqxx/tablewriter:
+
+/usr/include/pqxx/tablewriter.hxx:
+
+/usr/include/pqxx/transaction:
+
+/usr/include/pqxx/transaction.hxx:
+
+/usr/include/pqxx/transactor:
+
+/usr/include/pqxx/transactor.hxx:
+
+/usr/include/pqxx/version:
+
+/usr/include/pqxx/version.hxx:

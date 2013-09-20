@@ -3,10 +3,6 @@
 using namespace std;
 
 CPgsqlConfig::CPgsqlConfig():
-	m_strFrontAddr(NULL),
-	m_strBrokerId(NULL),
-	m_strUserId(NULL),
-	m_strPassword(NULL),
 	m_pgConn(NULL)
 {
 }
@@ -15,11 +11,12 @@ CPgsqlConfig::~CPgsqlConfig()
 {
 	m_pgConn->disconnect();
 	delete m_pgConn;
+	m_pgConn = NULL;
 }
 
 bool CPgsqlConfig::InitializeConfig()
 {
-	m_pgConn = new connection("dbname=acts user=postgres password=postgres");
+	m_pgConn = new connection("dbname=acts user=postgres");
 	work txn(*m_pgConn);
 
 	result r = txn.exec("SELECT * FROM user_config");
@@ -27,10 +24,10 @@ bool CPgsqlConfig::InitializeConfig()
 	if (r.size() != 1)
 		return false;
 	
-	m_strFrontAddr = r[0][0];
-	m_strBrokerId  = r[0][1];
-	m_strUserId    = r[0][2];
-	m_strPassword  = r[0][3];
+	m_strFrontAddr = r[0][0].as<string>();
+	m_strBrokerId  = r[0][1].as<string>();
+	m_strUserId    = r[0][2].as<string>();
+	m_strPassword  = r[0][3].as<string>();
 
 	return true;
 }
