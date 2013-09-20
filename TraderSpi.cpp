@@ -6,6 +6,7 @@ using namespace std;
 
 #include "ThostFtdcTraderApi.h"
 #include "TraderSpi.h"
+#include "PgsqlConfig.h"
 
 #pragma warning(disable : 4996)
 
@@ -13,6 +14,7 @@ using namespace std;
 extern CThostFtdcTraderApi* pUserApi;
 
 // 配置参数
+extern CPgsqlConfig g_PgsqlConfig;
 extern char FRONT_ADDR[];		// 前置地址
 extern char BROKER_ID[];		// 经纪公司代码
 extern char INVESTOR_ID[];		// 投资者代码
@@ -40,9 +42,9 @@ void CTraderSpi::ReqUserLogin()
 {
 	CThostFtdcReqUserLoginField req;
 	memset(&req, 0, sizeof(req));
-	strcpy(req.BrokerID, BROKER_ID);
+	strcpy(req.BrokerID, g_PgsqlConfig.GetBrokerId().c_str());
 	strcpy(req.UserID, INVESTOR_ID);
-	strcpy(req.Password, PASSWORD);
+	strcpy(req.Password, g_PgsqlConfig.GetPassword().c_str());
 	int iResult = pUserApi->ReqUserLogin(&req, ++iRequestID);
 	cerr << "--->>> 发送用户登录请求: " << ((iResult == 0) ? "成功" : "失败") << endl;
 }
@@ -70,8 +72,8 @@ void CTraderSpi::ReqSettlementInfoConfirm()
 {
 	CThostFtdcSettlementInfoConfirmField req;
 	memset(&req, 0, sizeof(req));
-	strcpy(req.BrokerID, BROKER_ID);
-	strcpy(req.InvestorID, INVESTOR_ID);
+	strcpy(req.BrokerID, g_PgsqlConfig.GetBrokerId().c_str());
+	strcpy(req.InvestorID, g_PgsqlConfig.GetUserId().c_str());
 	int iResult = pUserApi->ReqSettlementInfoConfirm(&req, ++iRequestID);
 	cerr << "--->>> 投资者结算结果确认: " << ((iResult == 0) ? "成功" : "失败") << endl;
 }
@@ -109,8 +111,8 @@ void CTraderSpi::ReqQryTradingAccount()
 {
 	CThostFtdcQryTradingAccountField req;
 	memset(&req, 0, sizeof(req));
-	strcpy(req.BrokerID, BROKER_ID);
-	strcpy(req.InvestorID, INVESTOR_ID);
+	strcpy(req.BrokerID, g_PgsqlConfig.GetBrokerId().c_str());
+	strcpy(req.InvestorID, g_PgsqlConfig.GetUserId().c_str());
 	int iResult = pUserApi->ReqQryTradingAccount(&req, ++iRequestID);
 	cerr << "--->>> 请求查询资金账户: " << ((iResult == 0) ? "成功" : "失败") << endl;
 }
@@ -129,8 +131,8 @@ void CTraderSpi::ReqQryInvestorPosition()
 {
 	CThostFtdcQryInvestorPositionField req;
 	memset(&req, 0, sizeof(req));
-	strcpy(req.BrokerID, BROKER_ID);
-	strcpy(req.InvestorID, INVESTOR_ID);
+	strcpy(req.BrokerID, g_PgsqlConfig.GetBrokerId().c_str());
+	strcpy(req.InvestorID, g_PgsqlConfig.GetUserId().c_str());
 	strcpy(req.InstrumentID, INSTRUMENT_ID);
 	int iResult = pUserApi->ReqQryInvestorPosition(&req, ++iRequestID);
 	cerr << "--->>> 请求查询投资者持仓: " << ((iResult == 0) ? "成功" : "失败") << endl;
@@ -151,9 +153,9 @@ void CTraderSpi::ReqOrderInsert()
 	CThostFtdcInputOrderField req;
 	memset(&req, 0, sizeof(req));
 	///经纪公司代码
-	strcpy(req.BrokerID, BROKER_ID);
+	strcpy(req.BrokerID, g_PgsqlConfig.GetBrokerId().c_str());
 	///投资者代码
-	strcpy(req.InvestorID, INVESTOR_ID);
+	strcpy(req.InvestorID, g_PgsqlConfig.GetUserId().c_str());
 	///合约代码
 	strcpy(req.InstrumentID, INSTRUMENT_ID);
 	///报单引用
