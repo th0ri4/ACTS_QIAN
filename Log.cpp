@@ -2,19 +2,23 @@
 #include <stdio.h>
 #include "Log.h"
 
-static void Open()
+void CLog::Open()
 {
-	openlog("ACTS", LOG_CONS, 0);  
+	openlog("ACTS", LOG_CONS, 0);
+	CLog::Debug("Open debug log");
+	CLog::TransAction("Open transaction log"); 
 }
 
 
-static void Close()
+void CLog::Close()
 {
+	CLog::Debug("Close debug log");
+	CLog::TransAction("Close transaction log"); 
 	closelog();
 }
 
 
-static void TransAction(const char *format, ...)
+void CLog::TransAction(const char *format, ...)
 {
 	va_list ap;
 	char szLogMsg[1024];
@@ -28,7 +32,7 @@ static void TransAction(const char *format, ...)
 }
 
 
-static void Debug(const char *format, ...)
+void CLog::Debug(const char *format, ...)
 {
 	va_list ap;
 	char szLogMsg[1024];

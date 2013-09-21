@@ -8,7 +8,7 @@
 #include <syslog.h> 
 
 #define LOG_TRANSACTION		(LOG_LOCAL2|LOG_INFO)
-#define LOG_ACTS_DEBUG		(LOG_LOCAL2|LOG_DEBUG)
+#define LOG_ACTS_DEBUG		(LOG_LOCAL3|LOG_DEBUG)
 
 class CLog
 {

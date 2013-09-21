@@ -3,6 +3,7 @@
 #include "ThostFtdcTraderApi.h"
 #include "TraderSpi.h"
 #include "PgsqlConfig.h"
+#include "Log.h"
 
 // UserApi对象
 CThostFtdcTraderApi* pUserApi;
@@ -20,6 +21,7 @@ int iRequestID = 0;
 
 int main(void)
 {
+	CLog::Open();
 	g_PgsqlConfig.InitializeConfig();
 	// 初始化UserApi
 	pUserApi = CThostFtdcTraderApi::CreateFtdcTraderApi();				// 创建UserApi
@@ -32,5 +34,6 @@ int main(void)
 
 	pUserApi->Join();
 	pUserApi->Release();
+	CLog::Close();
 	return 0;
 }
