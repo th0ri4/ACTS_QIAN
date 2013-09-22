@@ -127,7 +127,9 @@ testTraderApi.o: testTraderApi.cpp include/ThostFtdcTraderApi.h \
  /usr/include/pqxx/tablewriter.hxx /usr/include/pqxx/transaction \
  /usr/include/pqxx/transaction.hxx /usr/include/pqxx/transactor \
  /usr/include/pqxx/transactor.hxx /usr/include/pqxx/version \
- /usr/include/pqxx/version.hxx
+ /usr/include/pqxx/version.hxx Log.h /usr/include/syslog.h \
+ /usr/include/x86_64-linux-gnu/sys/syslog.h \
+ /usr/include/x86_64-linux-gnu/bits/syslog-path.h
 
 include/ThostFtdcTraderApi.h:
 
@@ -500,3 +502,11 @@ PgsqlConfig.h:
 /usr/include/pqxx/version:
 
 /usr/include/pqxx/version.hxx:
+
+Log.h:
+
+/usr/include/syslog.h:
+
+/usr/include/x86_64-linux-gnu/sys/syslog.h:
+
+/usr/include/x86_64-linux-gnu/bits/syslog-path.h:
