@@ -1,68 +1,79 @@
+#if !defined(TRADERSPI_H)
+#define TRADERSPI_H
+
 #pragma once
 #include "ThostFtdcTraderApi.h"
+
+namespace acts
+{
 
 class CTraderSpi : public CThostFtdcTraderSpi
 {
 public:
-	///µ±¿Í»§¶ËÓë½»Ò×ºóÌ¨½¨Á¢ÆğÍ¨ĞÅÁ¬½ÓÊ±£¨»¹Î´µÇÂ¼Ç°£©£¬¸Ã·½·¨±»µ÷ÓÃ¡£
-	virtual void OnFrontConnected();
+    ///å½“å®¢æˆ·ç«¯ä¸äº¤æ˜“åå°å»ºç«‹èµ·é€šä¿¡è¿æ¥æ—¶ï¼ˆè¿˜æœªç™»å½•å‰ï¼‰ï¼Œè¯¥æ–¹æ³•è¢«è°ƒç”¨ã€‚
+    virtual void OnFrontConnected();
 
-	///µÇÂ¼ÇëÇóÏìÓ¦
-	virtual void OnRspUserLogin(CThostFtdcRspUserLoginField *pRspUserLogin,	CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
+    ///ç™»å½•è¯·æ±‚å“åº”
+    virtual void OnRspUserLogin(CThostFtdcRspUserLoginField *pRspUserLogin,	CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
 
-	///Í¶×ÊÕß½áËã½á¹ûÈ·ÈÏÏìÓ¦
-	virtual void OnRspSettlementInfoConfirm(CThostFtdcSettlementInfoConfirmField *pSettlementInfoConfirm, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
-	
-	///ÇëÇó²éÑ¯ºÏÔ¼ÏìÓ¦
-	virtual void OnRspQryInstrument(CThostFtdcInstrumentField *pInstrument, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
+    ///æŠ•èµ„è€…ç»“ç®—ç»“æœç¡®è®¤å“åº”
+    virtual void OnRspSettlementInfoConfirm(CThostFtdcSettlementInfoConfirmField *pSettlementInfoConfirm, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
 
-	///ÇëÇó²éÑ¯×Ê½ğÕË»§ÏìÓ¦
-	virtual void OnRspQryTradingAccount(CThostFtdcTradingAccountField *pTradingAccount, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
+    ///è¯·æ±‚æŸ¥è¯¢åˆçº¦å“åº”
+    virtual void OnRspQryInstrument(CThostFtdcInstrumentField *pInstrument, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
 
-	///ÇëÇó²éÑ¯Í¶×ÊÕß³Ö²ÖÏìÓ¦
-	virtual void OnRspQryInvestorPosition(CThostFtdcInvestorPositionField *pInvestorPosition, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
+    ///è¯·æ±‚æŸ¥è¯¢èµ„é‡‘è´¦æˆ·å“åº”
+    virtual void OnRspQryTradingAccount(CThostFtdcTradingAccountField *pTradingAccount, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
 
-	///±¨µ¥Â¼ÈëÇëÇóÏìÓ¦
-	virtual void OnRspOrderInsert(CThostFtdcInputOrderField *pInputOrder, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
+    ///è¯·æ±‚æŸ¥è¯¢æŠ•èµ„è€…æŒä»“å“åº”
+    virtual void OnRspQryInvestorPosition(CThostFtdcInvestorPositionField *pInvestorPosition, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
 
-	///±¨µ¥²Ù×÷ÇëÇóÏìÓ¦
-	virtual void OnRspOrderAction(CThostFtdcInputOrderActionField *pInputOrderAction, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
+    ///æŠ¥å•å½•å…¥è¯·æ±‚å“åº”
+    virtual void OnRspOrderInsert(CThostFtdcInputOrderField *pInputOrder, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
 
-	///´íÎóÓ¦´ğ
-	virtual void OnRspError(CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
-	
-	///µ±¿Í»§¶ËÓë½»Ò×ºóÌ¨Í¨ĞÅÁ¬½Ó¶Ï¿ªÊ±£¬¸Ã·½·¨±»µ÷ÓÃ¡£µ±·¢ÉúÕâ¸öÇé¿öºó£¬API»á×Ô¶¯ÖØĞÂÁ¬½Ó£¬¿Í»§¶Ë¿É²»×ö´¦Àí¡£
-	virtual void OnFrontDisconnected(int nReason);
-		
-	///ĞÄÌø³¬Ê±¾¯¸æ¡£µ±³¤Ê±¼äÎ´ÊÕµ½±¨ÎÄÊ±£¬¸Ã·½·¨±»µ÷ÓÃ¡£
-	virtual void OnHeartBeatWarning(int nTimeLapse);
-	
-	///±¨µ¥Í¨Öª
-	virtual void OnRtnOrder(CThostFtdcOrderField *pOrder);
+    ///æŠ¥å•æ“ä½œè¯·æ±‚å“åº”
+    virtual void OnRspOrderAction(CThostFtdcInputOrderActionField *pInputOrderAction, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
 
-	///³É½»Í¨Öª
-	virtual void OnRtnTrade(CThostFtdcTradeField *pTrade);
+    ///é”™è¯¯åº”ç­”
+    virtual void OnRspError(CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
+
+    ///å½“å®¢æˆ·ç«¯ä¸äº¤æ˜“åå°é€šä¿¡è¿æ¥æ–­å¼€æ—¶ï¼Œè¯¥æ–¹æ³•è¢«è°ƒç”¨ã€‚å½“å‘ç”Ÿè¿™ä¸ªæƒ…å†µåï¼ŒAPIä¼šè‡ªåŠ¨é‡æ–°è¿æ¥ï¼Œå®¢æˆ·ç«¯å¯ä¸åšå¤„ç†ã€‚
+    virtual void OnFrontDisconnected(int nReason);
+
+    ///å¿ƒè·³è¶…æ—¶è­¦å‘Šã€‚å½“é•¿æ—¶é—´æœªæ”¶åˆ°æŠ¥æ–‡æ—¶ï¼Œè¯¥æ–¹æ³•è¢«è°ƒç”¨ã€‚
+    virtual void OnHeartBeatWarning(int nTimeLapse);
+
+    ///æŠ¥å•é€šçŸ¥
+    virtual void OnRtnOrder(CThostFtdcOrderField *pOrder);
+
+    ///æˆäº¤é€šçŸ¥
+    virtual void OnRtnTrade(CThostFtdcTradeField *pTrade);
 
 private:
-	///ÓÃ»§µÇÂ¼ÇëÇó
-	void ReqUserLogin();
-	///Í¶×ÊÕß½áËã½á¹ûÈ·ÈÏ
-	void ReqSettlementInfoConfirm();
-	///ÇëÇó²éÑ¯ºÏÔ¼
-	void ReqQryInstrument();
-	///ÇëÇó²éÑ¯×Ê½ğÕË»§
-	void ReqQryTradingAccount();
-	///ÇëÇó²éÑ¯Í¶×ÊÕß³Ö²Ö
-	void ReqQryInvestorPosition();
-	///±¨µ¥Â¼ÈëÇëÇó
-	void ReqOrderInsert();
-	///±¨µ¥²Ù×÷ÇëÇó
-	void ReqOrderAction(CThostFtdcOrderField *pOrder);
+    ///ç”¨æˆ·ç™»å½•è¯·æ±‚
+    void ReqUserLogin();
+    ///æŠ•èµ„è€…ç»“ç®—ç»“æœç¡®è®¤
+    void ReqSettlementInfoConfirm();
+    ///è¯·æ±‚æŸ¥è¯¢åˆçº¦
+    void ReqQryInstrument();
+    ///è¯·æ±‚æŸ¥è¯¢èµ„é‡‘è´¦æˆ·
+    void ReqQryTradingAccount();
+    ///è¯·æ±‚æŸ¥è¯¢æŠ•èµ„è€…æŒä»“
+    void ReqQryInvestorPosition();
+    ///æŠ¥å•å½•å…¥è¯·æ±‚
+    void ReqOrderInsert();
+    ///æŠ¥å•æ“ä½œè¯·æ±‚
+    void ReqOrderAction(CThostFtdcOrderField *pOrder);
 
-	// ÊÇ·ñÊÕµ½³É¹¦µÄÏìÓ¦
-	bool IsErrorRspInfo(CThostFtdcRspInfoField *pRspInfo);
-	// ÊÇ·ñÎÒµÄ±¨µ¥»Ø±¨
-	bool IsMyOrder(CThostFtdcOrderField *pOrder);
-	// ÊÇ·ñÕıÔÚ½»Ò×µÄ±¨µ¥
-	bool IsTradingOrder(CThostFtdcOrderField *pOrder);
+    // æ˜¯å¦æ”¶åˆ°æˆåŠŸçš„å“åº”
+    bool IsErrorRspInfo(CThostFtdcRspInfoField *pRspInfo);
+    // æ˜¯å¦æˆ‘çš„æŠ¥å•å›æŠ¥
+    bool IsMyOrder(CThostFtdcOrderField *pOrder);
+    // æ˜¯å¦æ­£åœ¨äº¤æ˜“çš„æŠ¥å•
+    bool IsTradingOrder(CThostFtdcOrderField *pOrder);
 };
+
+}
+#endif
+
+

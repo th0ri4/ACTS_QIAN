@@ -1,39 +1,39 @@
-// testTraderApi.cpp : ¶¨Òå¿ØÖÆÌ¨Ó¦ÓÃ³ÌÐòµÄÈë¿Úµã¡£
+// testTraderApi.cpp : å®šä¹‰æŽ§åˆ¶å°åº”ç”¨ç¨‹åºçš„å…¥å£ç‚¹ã€‚
 //
 #include "ThostFtdcTraderApi.h"
 #include "TraderSpi.h"
-#include "PgsqlConfig.h"
+#include "DbUserConfig.h"
 #include "Log.h"
 
-// UserApi¶ÔÏó
+// UserApiå¯¹è±¡
 CThostFtdcTraderApi* pUserApi;
 
-// ÅäÖÃ²ÎÊý
+// é…ç½®å‚æ•°
 
-CPgsqlConfig g_PgsqlConfig;
+acts::db::CUserConfig g_UserConfig;
 
-TThostFtdcInstrumentIDType INSTRUMENT_ID = "cu0909";		// ºÏÔ¼´úÂë
-TThostFtdcDirectionType	DIRECTION = THOST_FTDC_D_Sell;		// ÂòÂô·½Ïò
-TThostFtdcPriceType	LIMIT_PRICE = 38850;			// ¼Û¸ñ
+TThostFtdcInstrumentIDType INSTRUMENT_ID = "cu0909";		// åˆçº¦ä»£ç 
+TThostFtdcDirectionType	DIRECTION = THOST_FTDC_D_Sell;		// ä¹°å–æ–¹å‘
+TThostFtdcPriceType	LIMIT_PRICE = 38850;			// ä»·æ ¼
 
-// ÇëÇó±àºÅ
+// è¯·æ±‚ç¼–å·
 int iRequestID = 0;
 
 int main(void)
 {
-	CLog::Open();
-	g_PgsqlConfig.InitializeConfig();
-	// ³õÊ¼»¯UserApi
-	pUserApi = CThostFtdcTraderApi::CreateFtdcTraderApi();				// ´´½¨UserApi
-	CTraderSpi* pUserSpi = new CTraderSpi();
-	pUserApi->RegisterSpi((CThostFtdcTraderSpi*)pUserSpi);				// ×¢²áÊÂ¼þÀà
-	pUserApi->SubscribePublicTopic(THOST_TERT_RESTART);				// ×¢²á¹«ÓÐÁ÷
-	pUserApi->SubscribePrivateTopic(THOST_TERT_RESTART);				// ×¢²áË½ÓÐÁ÷
-	pUserApi->RegisterFront(const_cast<char*>(g_PgsqlConfig.GetFrontAddress().c_str()));	// connect
-	pUserApi->Init();
+    CLog::Open();
+    g_UserConfig.InitializeConfig();
+    // åˆå§‹åŒ–UserApi
+    pUserApi = CThostFtdcTraderApi::CreateFtdcTraderApi();			// åˆ›å»ºUserApi
+    CTraderSpi* pUserSpi = new CTraderSpi();
+    pUserApi->RegisterSpi((CThostFtdcTraderSpi*)pUserSpi);			// æ³¨å†Œäº‹ä»¶ç±»
+    pUserApi->SubscribePublicTopic(THOST_TERT_RESTART);				// æ³¨å†Œå…¬æœ‰æµ
+    pUserApi->SubscribePrivateTopic(THOST_TERT_RESTART);			// æ³¨å†Œç§æœ‰æµ
+    pUserApi->RegisterFront(const_cast<char*>(g_UserConfig.GetFrontAddress().c_str()));	// connect
+    pUserApi->Init();
 
-	pUserApi->Join();
-	pUserApi->Release();
-	CLog::Close();
-	return 0;
+    pUserApi->Join();
+    pUserApi->Release();
+    CLog::Close();
+    return 0;
 }
